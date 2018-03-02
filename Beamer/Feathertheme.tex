@@ -1,0 +1,235 @@
+\documentclass[10pt]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+\usetikzlibrary{shapes,arrows}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{title}{size=\fontsize{30}{36}\bfseries}
+\setbeamerfont{subtitle}{size=\Large\normalfont\slshape}
+
+%customized template for RTG title page
+\setbeamertemplate{title page}{%
+\begin{tikzpicture}[remember picture,overlay]
+%color theme 
+\fill[RTGblue]
+  ([yshift=35pt]current page.south west) rectangle (current page.south east);
+\fill[RTGred]
+  ([yshift=32pt]current page.south west) rectangle ([yshift=35pt]current page.south east);  
+\fill[RTGblue]
+  ([yshift=-70pt]current page.north west) rectangle ([yshift=-35pt]current page.north east);
+\fill[RTGred]
+  ([yshift=-70pt]current page.north west) rectangle ([yshift=-72.5pt]current page.north east);
+%Header: University of Mannheim/Heidelberg logo 
+\node[anchor=north west] 
+  at ([yshift=-6pt]current page.north west) (logo)
+  {\parbox[t]{2.5cm}{\raggedleft%
+    \usebeamercolor[fg]{titlegraphic}\includegraphics[width=2cm]{uni-ma}}};
+    
+\node[anchor=north east] 
+  at ([yshift=1pt]current page.north east) (logo)
+  {\parbox[t]{2.5cm}{\raggedright%
+    \usebeamercolor[fg]{titlegraphic}\includegraphics[width=2cm]{uni-hd}}};
+    
+\node[anchor=north]
+ at([yshift=-5pt]current page.north) (header)
+ {\parbox[c]{0.5\paperwidth}{\centering \fontsize{10pt}{2pt}\selectfont Probability \& Statistics Group Heidelberg-Mannheim}};
+ 
+ %footer   
+\node[anchor=south east] 
+  at ([yshift=10pt]current page.south east) (rtg)
+  {\parbox[c]{2cm}{\raggedright%
+   \fontsize{12pt}{2pt}\selectfont \textcolor{white} {RTG 1953}}};
+
+%\node[anchor=south west] 
+%  at ([yshift=11pt]current page.south west) (dfg)
+%  {\parbox[c]{2.75cm}{\raggedleft%
+%   \fontsize{0pt}{2pt}\selectfont \textcolor{white} { }}};
+%   
+\node[anchor=south west] 
+  at ([yshift = 7pt,xshift=0.28cm]current page.south west) (logo)
+  {\parbox[c]{1.2cm}{\raggedleft%
+   \usebeamercolor[fg]{titlegraphic}\includegraphics[width=1.2cm]{dfg}}};
+    
+
+%% title + author, adjust yshift value if necessary (controls vertical position)
+\node[anchor=center]
+  at ([yshift=10pt]current page.center) (title)
+  {\parbox[t]{\textwidth}{\linespread{6} \selectfont \centering%
+\fontsize{14pt}{3pt}\selectfont \textcolor{black}{\inserttitle}}};
+ 
+\node[anchor=center]
+  at ([yshift=-45pt]current page.center) (author)
+  {\parbox[c]{\textwidth}{\centering\usebeamerfont{author}\textcolor{black}{\insertauthor}}};
+\end{tikzpicture}
+}
+
+
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+\definecolor{RTGblue}{HTML}{2E2E2E}
+\definecolor{RTGred}{HTML}{C80B33}
+\definecolor{black}{rgb}{0.0, 0.0, 0.0}
+
+% Change the bar colors:
+\setbeamercolor{Feather}{fg=red!80!black, bg=RTGblue}
+\setbeamercolor{block title}{bg=RTGblue, fg=white}
+\setbeamercolor{block body}{bg=white, fg=black}
+
+% Change the color of the structural elements:
+\setbeamercolor{structure}{fg=black}
+
+% Change the frame title text color:
+\setbeamercolor{frametitle}{fg=white}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+\usepackage{ifpdf}
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{multicol}
+\usepackage{animate}
+\usepackage{libertineotf}
+\usepackage{tikz}
+\usepackage{pdfrender}
+
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\else
+% Recent LaTeX versions donât require the next line
+% \DeclareGraphicsRule{*}{eps}{*}{}
+\fi
+
+
+\usepackage[sfdefault]{AlegreyaSans} %% Option 'black' gives heavier bold face
+%% The 'sfdefault' option to make the base font sans serif
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+    
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+%\usepackage[TS1,T1]{fontenc}
+%\usepackage{helvet}
+\usepackage{fourier}
+\usepackage{hyperref}
+%\usepackage{lmodern}
+%\usepackage{mathrsfs}
+\usepackage{amsmath,amssymb,amsfonts,graphicx,shorttoc,textpos,caption,here, yfonts}
+\usepackage{verbatim,enumerate,dsfont,fancyhdr,setspace,array}
+\usepackage[cal=boondox]{mathalfa}
+
+%\usepackage[style=authoryear]{biblatex}
+%\renewcommand*{\nameyeardelim}{\addcomma\addspace}
+
+
+\graphicspath{{Feathergraphics/}}
+%\bibliography{biblio1}
+%\DeclareCiteCommand{\cite}
+%{\usebibmacro{prenote}}
+%{\usebibmacro{citeindex}%
+%\usebibmacro{cite}}
+%{\multicitedelim}
+%{\usebibmacro{cite:postnote}}
+%\usefonttheme[onlymath]{serif}
+%\newbibmacro*{cite}{%
+%\usebibmacro{cite:citepages}%
+%\ifciteseen
+%	{\iffieldundef{shorthand}
+%		{\usebibmacro{cite:short}}
+%		{\usebibmacro{cite:shorthand}}}
+%	{\usebibmacro{cite:full}}}
+%
+%\renewbibmacro*{cite}{%
+%\usebibmacro{cite:citepages}%
+%{\usebibmacro{cite:full}}}
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%\bibliographystyle{apalike}
+%\renewcommand\bibfont{\scriptsize}
+\DeclareMathOperator*{\Argmin}{Arg\,min}
+\setbeamertemplate{frametitle continuation}[from second]
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[Regression on graphs by spectral decomposition] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+     \textbf{Regression on graphs by spectral decomposition}
+}
+
+
+\subtitle[kreiss@uni-heidelberg.de, loizeau@math.uni-heidelberg.de] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+    % \textit{loizeau@math.uni-heidelberg.de}
+}
+
+
+\institute[Ruprecht-Karls-Universität Heidelberg]
+{
+
+  \begin{flushright}Ruprecht-Karls-Universität Heidelberg\end{flushright}
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{}
+
+\author[Alexander Krei\ss, Xavier Loizeau] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textit{Alexander Krei\ss, Xavier Loizeau}
+}
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}
+
+\AtBeginSection[]{
+\begin{frame}[noframenumbering]{Contents}
+\setcounter{tocdepth}{1}
+%\begin{multicols}{2}
+\tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+%\end{multicols}
+\end{frame}
+}
+
+\begin{frame}{Contents}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+\section{Introduction}
+%-------------------------------------------------------
+
+\begin{frame}{Regression on graphs}
+
+\end{frame}
+
+\begin{frame}<beamer:0>
+\bibliography{iGSSM}
+\end{frame}
+\bibliographystyle{plainnat}
+\end{document}

@@ -1,0 +1,158 @@
+\documentclass[a4paper,11pt]{book}
+\synctex=1
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{stmaryrd}
+\usepackage{algorithm2e}
+\usepackage{natbib}
+\usepackage{cite}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{dsfont}
+\usepackage{eurosym}
+\usepackage{yfonts}
+%\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsmath,amssymb,amsfonts,graphicx,shorttoc,textpos,caption,here,titlesec}
+\usepackage{verbatim,enumerate,hyperref,dsfont,fancyhdr,setspace,array}
+\usepackage[margin=3cm]{geometry}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstloadlanguages{R}
+\usepackage{booktabs}
+\usepackage{color}
+
+\usepackage{cleveref}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{literate=%
+{é}{{\'e}}1
+{è}{{\`e}}1
+{à}{{\o}}1
+{Æ}{{\AE}}1
+{Å}{{\AA}}1
+{Ø}{{\O}}1
+}
+\lstset{extendedchars=\true}
+\lstset{inputencoding=ansinew}
+
+\newcommand{\pen}{\text{pen}}
+
+\newtheoremstyle{custom}% name of the style to be used
+  {}% measure of space to leave above the theorem. E.g.: 3pt
+  {}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {0pt}% measure of space to indent
+  {\scshape}% name of head font
+  {\quad}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+  
+\theoremstyle{custom}
+
+\newsavebox{\BBbox}
+\newenvironment{DDbox}[1]{
+\begin{lrbox}{\BBbox}\begin{minipage}{\linewidth}}
+{\end{minipage}\end{lrbox}\noindent{\usebox{\BBbox}} \\
+[.5cm]}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{de}{Definition}[section]
+\newtheorem{lm}{Lemma}[section]
+\newtheorem{pr}{Proposition}[section]
+\newtheorem{as}{Assumption}[section]
+\newtheorem{pro}{Proof}[section]
+\newtheorem{rmk}{Remark}[section]
+\newtheorem{rem}{Reminder}[section]
+\newtheorem{nota}{Notations}[section]
+\renewcommand\thefootnote{{footnote}}
+\addto\captionsenglish{
+\renewcommand{\contentsname}
+{Table des matières}
+\renewcommand{\listfigurename}{Table des figures}
+}
+
+\graphicspath{{Illustration/}}
+
+
+\hypersetup{colorlinks=true,linkcolor=blue}
+
+\linespread{1.1}
+
+\parindent0cm
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+%\DeclareMathOperator*{\liminf}{lim\,inf}
+%\DeclareMathOperator*{\limsup}{lim\,sup}
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter\sffamily}
+{\rule[1mm]{15mm}{1.5mm} \hspace{4mm} \large{\chaptertitlename} \thechapter \hspace{5mm} \rule[1mm]{15mm}{1.5mm}}
+{1pc}
+{\titlerule
+\vspace{1pc}
+\huge}
+
+\begin{document}
+
+\title{Regression on graph by spectral decomposition\\
+\large cut-off and aggregation}
+\author{
+\begin{tabular}{ccccc}
+	Alexander Kreiß & Xavier Loizeau\\
+\end{tabular}
+}
+\date{}
+
+\maketitle
+
+\chapter{Introduction}
+\section{The data}\label{I}
+
+\section{Likelihood}
+
+
+\chapter{Bayesian approach with hierarchical sieve prior}
+\section{Sieve priors}
+
+\section{Hierarchical priors}
+
+\chapter{Frequentist estimation in circular deconvolution}
+\section{Empirical distribution and projection estimates}
+
+\subsection{Estimating the Fourier coefficients individually}
+\subsection{Estimation of the Fourier sequence}
+
+\subsection{Penalized contrast model selection}
+
+\section{Aggregation estimator}
+
+\subsection{Estimating the Fourier coefficients individually}
+\subsection{Estimating the Fourier sequence}
+
+
+\chapter{Generalization of graph regression}
+\section{Dependent data}
+\subsection{Projection estimator and model selection}
+\subsection{Aggregation estimator}
+
+\section{Partially unknown operator}
+\subsection{Projection estimator and model selection}
+\subsection{Aggregation estimator}
+
+\bibliography{biblio.bib}{}
+\nocite{*}
+\bibliographystyle{apalike}
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

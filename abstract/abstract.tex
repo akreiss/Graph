@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{21cm}
+\setlength{\hoffset}{-1.4cm}
+\setlength{\parindent}{0cm}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cleveref}[2012/02/15]
+
+
+\usepackage{natbib}
+% BIBLIOGRAPHY
+\renewcommand{\cite}{\citet}
+\bibliographystyle{abbrvnat}
+
+\crefformat{footnote}{#2\footnotemark[#1]#3}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\large 
+	{ \sc Optimal aggregation in circular deconvolution by a frequentist Bayesian approach}}
+
+\bigskip
+
+\underline{Xavier {\sc Loizeau}}\footnote{\label{HD}Ruprecht-Karls-Universität Heidelberg ;},\\ Joint work with Fabienne {\sc Comte}\footnote{Université Paris Descartes.} and Jan {\sc Johannes}\cref{HD}\\[1ex]
+
+\bigskip
+
+StatMathAppli2017 - September 2017  
+
+\end{center}
+
+\bigskip
+
+\begin{abstract}
+In a circular deconvolution problem we consider the estimation of the density of a circular random variable $X$
+using noisy observations where the additive circular noise is independent of $X$ and admits a known density.
+
+In this context it has been shown in \cite{FCMLT} and \cite{JJMS} that, considering a family of projection estimators, a fully data-driven choice of the dimension parameter using a model selection approach can lead to minimax-optimal rates of convergence up to a constant.
+
+In this presentation we propose a fully data-driven aggregation of those projection estimators depending on a tuning parameter which we interpret later on as a number of iterations.
+Thereby, we obtain a family of fully data-driven circular deconvolution estimators indexed by the iteration parameter. Interestingly in the limiting case,  when the iteration parameter tends to infinite,  the aggregated estimator coincides with the projection estimator with fully data-driven choice of the dimension by the model selection approach.
+However, for any element of the family of aggregated estimators  we show up to a constant minimax optimality as well as oracle optimality within the family of projection estimators.
+
+The proposed aggregation strategy is inspired by an iterative Bayes estimate in the context of an inverse Gaussian sequence space model, which \cite{JJXL}  have been studied from a frequentist Bayesian point of view.
+In the same spirit we present an iterative Bayesian model with Bayes estimator coinciding with the aggregated estimator with associated iteration parameter and posterior distribution concentrating at optimal rate as the sample size increases.
+
+\end{abstract}
+\vfill
+\bibliography{Decon-Bib}
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

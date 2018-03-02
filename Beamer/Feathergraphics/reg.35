@@ -1,0 +1,51 @@
+%!PS
+%%BoundingBox: -171 -142 171 142 
+%%HiResBoundingBox: -170.3287 -141.98225 170.3287 141.98225 
+%%Creator: MetaPost 1.504
+%%CreationDate: 2015.01.07:1230
+%%Pages: 1
+%*Font: cmmi10 9.96265 9.96265 12:800000000000000020000c
+%*Font: cmmi7 6.97385 6.97385 3f:8000000000028
+%*Font: cmr10 9.96265 9.96265 02:8000000000000014
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 1 1 1 setrgbcolor 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 -141.73225 moveto
+0 141.73225 lineto stroke
+ 0 0 0 setrgbcolor 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath -56.6929 0 moveto
+-56.6929 54.28984 -66.75436 113.3858 -113.3858 113.3858 curveto
+-160.01724 113.3858 -170.0787 54.28984 -170.0787 0 curveto
+-170.0787 -54.28984 -160.01724 -113.3858 -113.3858 -113.3858 curveto
+-66.75436 -113.3858 -56.6929 -54.28984 -56.6929 0 curveto stroke
+ 1 1 1 setrgbcolor
+newpath 56.6929 0 moveto
+56.6929 54.28984 66.75436 113.3858 113.3858 113.3858 curveto
+160.01724 113.3858 170.0787 54.28984 170.0787 0 curveto
+170.0787 -54.28984 160.01724 -113.3858 113.3858 -113.3858 curveto
+66.75436 -113.3858 56.6929 -54.28984 56.6929 0 curveto stroke
+ 0 0 0 setrgbcolor
+-147.03673 108.90569 moveto
+(\002) cmr10 9.96265 fshow
+-117.93956 4.49442 moveto
+(\022) cmmi10 9.96265 fshow
+-113.26266 3.00002 moveto
+(o) cmmi7 6.97385 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop
+newpath -113.3858 0 moveto 0 0 rlineto stroke
+ 1 0 0 setrgbcolor 0 0.79701 dtransform truncate idtransform setlinewidth pop
+newpath -141.73396 0 moveto
+-141.73396 -15.65628 -129.04208 -28.34816 -113.3858 -28.34816 curveto
+-97.72952 -28.34816 -85.03764 -15.65628 -85.03764 0 curveto
+-85.03764 15.65628 -97.72952 28.34816 -113.3858 28.34816 curveto
+-129.04208 28.34816 -141.73396 15.65628 -141.73396 0 curveto closepath stroke
+ [0 5 ] 2.5 setdash
+newpath -158.74286 0 moveto
+-158.74286 -25.05005 -138.43585 -45.35706 -113.3858 -45.35706 curveto
+-88.33575 -45.35706 -68.02875 -25.05005 -68.02875 0 curveto
+-68.02875 25.05005 -88.33575 45.35706 -113.3858 45.35706 curveto
+-138.43585 45.35706 -158.74286 25.05005 -158.74286 0 curveto closepath stroke
+showpage
+%%EOF
