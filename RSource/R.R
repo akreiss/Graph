@@ -2,6 +2,8 @@
 ##### TODO #####
 ################
 
+### test
+
 ####### ARE EIGEN VECTORS CONVERGING ?
 ### try to find best matching eigen vectors
 ### try with more vertices / less edges ?
